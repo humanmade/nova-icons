@@ -41,3 +41,9 @@ export default props => {
 	<div>Here's a thing with a <Cloud /></div>;
 }
 ```
+
+## Development
+
+All the smartness of this repo is in npm scripts and the config.js. Components are built using [svg-react-transformer-writer](https://github.com/mapbox/svg-react-transformer-writer); see [the options](https://github.com/mapbox/svg-react-transformer#options-2) for configuration.
+
+To publish a new version, run `yarn run dist`, which will publish in ["flat mode"](https://davidwells.io/blog/publishing-flat-npm-packages-for-easier-import-paths-smaller-consumer-bundle-sizes/). There is a `prepublishOnly` script to prevent publishing from the root directory, but you should be careful anyway.
