@@ -1,0 +1,22 @@
+.HMNovaIcon {
+	display: inline-block;
+	width: 1.555rem;
+	height: 1.555rem;
+	padding: 0;
+	vertical-align: bottom;
+	background: no-repeat center center;
+	background-size: 80%;
+	border: none;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.HMNovaIcon:hover,
+.HMNovaIcon:focus {
+	border: none;
+}
+
+.HMNovaIcon:focus {
+	outline: none;
+}

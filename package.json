@@ -1,0 +1,20 @@
+{
+	"name": "@humanmade/nova-icons",
+	"version": "0.0.1",
+	"license": "ISC",
+	"devDependencies": {
+		"@mapbox/svg-react-transformer-writer": "^1.0.2",
+		"pascal-case": "^2.0.1",
+		"stringify-object": "^3.2.2"
+	},
+	"peerDependencies": {
+		"react": "~16"
+	},
+	"scripts": {
+		"build": "svg-react-transformer -c config.js -d build \"src/*.svg\"",
+		"build:dist": "cp -r build/*.js dist && cp package.json dist/ && cp style.css dist/",
+		"clean": "rm -r build/*.js dist/* || true",
+		"dist": "yarn run clean && yarn run build && yarn run build:dist && cd dist && yarn publish",
+		"prepublishOnly": "test ! -f config.js"
+	}
+}
