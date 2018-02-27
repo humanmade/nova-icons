@@ -14,11 +14,12 @@
 		"react": "~16"
 	},
 	"scripts": {
-		"build": "svg-react-transformer -c config.js -d build \"src/*.svg\"",
-		"build:index": "create-index build/ && babel --presets=es2015 build/index.js -o build/index.js",
+		"build": "yarn run build:svg && yarn run build:index && yarn run build:dist",
+		"build:svg": "svg-react-transformer -c config.js -d build \"src/*.svg\"",
+		"build:index": "( rm build/index.js || true ) && create-index build/ && babel --presets=es2015 build/index.js -o build/index.js",
 		"build:dist": "cp -r build/*.js dist && cp package.json dist/ && cp README.md dist/ && cp style.css dist/",
 		"clean": "rm -r build/*.js dist/* || true",
-		"dist": "yarn run clean && yarn run build && yarn run build:dist && cd dist && yarn publish",
+		"dist": "yarn run clean && yarn run build && cd dist && yarn publish",
 		"prepublishOnly": "test ! -f config.js"
 	}
 }
