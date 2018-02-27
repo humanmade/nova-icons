@@ -35,10 +35,14 @@ import '@humanmade/nova-icons/style.css';
 Then, import the icons you want:
 
 ```js
+// Import via unpacking:
+import { Airplane } from '@humanmade/nova-icons';
+
+// Or import by file:
 import Cloud from '@humanmade/nova-icons/Cloud';
 
 export default props => {
-	<div>Here's a thing with a <Cloud /></div>;
+	<div>A <Airplane /> flies in the <Cloud /></div>;
 }
 ```
 
