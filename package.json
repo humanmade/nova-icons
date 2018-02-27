@@ -4,6 +4,9 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@mapbox/svg-react-transformer-writer": "^1.0.2",
+		"babel-cli": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"create-index": "^2.3.0",
 		"pascal-case": "^2.0.1",
 		"stringify-object": "^3.2.2"
 	},
@@ -12,6 +15,7 @@
 	},
 	"scripts": {
 		"build": "svg-react-transformer -c config.js -d build \"src/*.svg\"",
+		"build:index": "create-index build/ && babel --presets=es2015 build/index.js -o build/index.js",
 		"build:dist": "cp -r build/*.js dist && cp package.json dist/ && cp README.md dist/ && cp style.css dist/",
 		"clean": "rm -r build/*.js dist/* || true",
 		"dist": "yarn run clean && yarn run build && yarn run build:dist && cd dist && yarn publish",
