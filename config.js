@@ -36,7 +36,7 @@ const template = data => {
 };
 
 module.exports = {
-	// precompile: true,
+	precompile: true,
 	template,
 	filenameTemplate: pascalCase,
 };
