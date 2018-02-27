@@ -25,7 +25,7 @@ const template = data => {
 		${propTypesRequire}
 		class ${data.name} extends React.PureComponent {
 			render() {
-				const className = ( 'HMNovaIcon ' + this.props.className || '' ).trim();
+				const className = ( 'HMNovaIcon ' + ( this.props.className || '' ) ).trim();
 				return ${jsxSvgWithProps};
 			}
 		}
